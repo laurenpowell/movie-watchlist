@@ -18,8 +18,8 @@ export const Add = () => {
 
         Promise.allSettled(urls)
           .then((results) => {
-            setResults(results[0].value.data.results);
-            setTvResults(results[1].value.data.results);
+            setResults(results[0]?.value?.data?.results);
+            setTvResults(results[1]?.value?.data?.results);
           }).catch((err) => {
             console.log(err);
           });
