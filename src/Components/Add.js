@@ -53,9 +53,9 @@ export const Add = () => {
               <div className="result-title">
                 <p> Movies </p>
               </div>
-                  {results.length > 0 && (
+                  {results?.length > 0 && (
                     <ul className="results">
-                      {results.map((movie) => (
+                      {results?.map((movie) => (
                         <li 
                           key={movie.id}>
                           <ResultCard movie={movie} />
@@ -66,9 +66,9 @@ export const Add = () => {
                 <div className="result-title">
                   <p> Tv Shows </p>
                 </div>
-                  {tvResults.length > 0 && (
+                  {tvResults?.length > 0 && (
                     <ul className="results">
-                      {tvResults.map((movie) => (
+                      {tvResults?.map((movie) => (
                         <li 
                           key={movie.id}>
                           <ResultCard movie={movie} />
