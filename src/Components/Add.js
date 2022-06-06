@@ -28,12 +28,12 @@ export const Add = () => {
   
     //sort movies by popularity
     
-    results.sort(function(a, b) {
+    results?.sort(function(a, b) {
       var popA = (a.popularity), popB = (b.popularity);
       return popB - popA;
     });
 
-    tvResults.sort(function(a, b) {
+    tvResults?.sort(function(a, b) {
       var popA = (a.popularity), popB = (b.popularity);
       return popB - popA;
     });
