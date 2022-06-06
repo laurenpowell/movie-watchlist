@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Moment from "react-moment";
 import { GlobalContext } from "../Context/GlobalState";
 
-export const ResultCard = ({movie}) => {
+export const ResultCard = ({movie}, {tv}) => {
     const {
         addMovieToWatchlist,
         addMovieToWatched,
@@ -20,7 +20,7 @@ export const ResultCard = ({movie}) => {
         : false;
 
     const watchedDisabled = storedMovieWatched ? true : false;
-
+      
     return (
         <div className="result-card">
             <div className="poster-wrapper">
@@ -36,9 +36,9 @@ export const ResultCard = ({movie}) => {
 
             <div className="info">
                 <div className="header">
-                    <h3 className="title">{movie.title}</h3>
+                    <h3 className="title">{movie.title || movie.name}</h3>
                     <h4 className="release-date">
-                       <Moment format="YYYY">{movie.release_date}</Moment>
+                       <Moment format="YYYY">{movie.release_date || movie.first_air_date || null }</Moment>
                     </h4>
                 </div>
             

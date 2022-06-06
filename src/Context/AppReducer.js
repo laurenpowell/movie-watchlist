@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
 
     switch (action.type) {
@@ -34,6 +35,11 @@ export default (state, action) => {
                 ...state,
                 watched: state.watched.filter((movie) => movie.id !== action.payload),
             };
+        case "MOVIE_DETAIL":
+            return {
+                ...state,
+                detail: [action.payload, ...state.detail],
+            };    
         default:
             return state;
     }
