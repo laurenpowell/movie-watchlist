@@ -21,18 +21,16 @@ export const Watched = () => {
       <div className="container">
         <div className="header">
           <h1 className="heading">Watched Movies</h1>
+        </div>
 
+        <div className="header">
+          <h2 className="heading">Movies</h2> 
           <span className="count-pill">
             {watched.filter(media => media.hasOwnProperty("title")).length}
-            {watched.filter(media => media.hasOwnProperty("title")).length === 1 ? " Movie and " : " Movies and "}
-            {watched.filter(media => media.hasOwnProperty("name")).length}
-            {watched.filter(media => media.hasOwnProperty("name")).length === 1 ? " Tv Show " : " Tv Shows "}
+            {watched.filter(media => media.hasOwnProperty("title")).length === 1 ? " Movie" : " Movies"}
           </span>
         </div>
 
-        <div className="result-title">
-                <p> Movies </p>
-        </div>
         {watched.filter(media => media.hasOwnProperty("title")).length > 0 ? (
           <div className="movie-grid">
             {watched.filter(media => media.hasOwnProperty("title"))
@@ -44,8 +42,14 @@ export const Watched = () => {
           <h2 className="no-movies">No movies in your list! Add some!</h2>
         )}
 
-        <div className="result-title">
-          <p> Tv Shows </p>
+
+
+        <div className="header">
+          <h2 className="heading">Tv Shows</h2> 
+          <span className="count-pill">
+          {watched.filter(media => media.hasOwnProperty("name")).length}
+          {watched.filter(media => media.hasOwnProperty("name")).length === 1 ? " Tv Show " : " Tv Shows "}
+          </span>
         </div>
         {watched.filter(media => media.hasOwnProperty("name")).length > 0 ? (
           <div className="movie-grid">

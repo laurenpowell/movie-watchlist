@@ -26,19 +26,16 @@ export const Add = () => {
     };
 
   
-    //sort movies by popularity
-    
+    //sort movies by date
     results?.sort(function(a, b) {
-      var popA = (a.popularity), popB = (b.popularity);
-      return popB - popA;
+      var dateA = new Date(a.release_date), dateB = new Date(b.release_date);
+      return dateB - dateA;
     });
 
     tvResults?.sort(function(a, b) {
-      var popA = (a.popularity), popB = (b.popularity);
-      return popB - popA;
+      var dateA = new Date(a.first_air_date), dateB = new Date(b.first_air_date);
+      return dateB - dateA;
     });
-
-
     return (
       <div className="add-page">
         <div className="container">

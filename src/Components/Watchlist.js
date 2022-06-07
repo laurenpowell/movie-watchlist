@@ -20,20 +20,19 @@ export const Watchlist = () => {
   return (
     <div className="movie-page"> 
       <div className="container">
+
         <div className="header">
           <h1 className="heading">My Watchlist</h1>
-          
+        </div>
+
+        <div className="header">
+          <h2 className="heading">Movies</h2> 
           <span className="count-pill">
             {watchlist.filter(media => media.hasOwnProperty("title")).length}
-            {watchlist.filter(media => media.hasOwnProperty("title")).length === 1 ? " Movie and " : " Movies and "}
-            {watchlist.filter(media => media.hasOwnProperty("name")).length}
-            {watchlist.filter(media => media.hasOwnProperty("name")).length === 1 ? " Tv Show " : " Tv Shows "}
+            {watchlist.filter(media => media.hasOwnProperty("title")).length === 1 ? " Movie" : " Movies"}
           </span>
         </div>
 
-        <div className="result-title">
-                <p> Movies </p>
-        </div>
         {watchlist.filter(media => media.hasOwnProperty("title")).length > 0 ? (
           <div className="movie-grid">
             {watchlist.filter(media => media.hasOwnProperty("title"))
@@ -45,9 +44,15 @@ export const Watchlist = () => {
           <h4 className="no-movies">No movies in your list! Add some!</h4>
         )}
 
-        <div className="result-title">
-          <p> Tv Shows </p>
+
+        <div className="header">
+          <h2 className="heading">Tv Shows</h2> 
+          <span className="count-pill">
+          {watchlist.filter(media => media.hasOwnProperty("name")).length}
+          {watchlist.filter(media => media.hasOwnProperty("name")).length === 1 ? " Tv Show " : " Tv Shows "}
+          </span>
         </div>
+
         {watchlist.filter(media => media.hasOwnProperty("name")).length > 0 ? (
           <div className="movie-grid">
             {watchlist.filter(media => media.hasOwnProperty("name"))
